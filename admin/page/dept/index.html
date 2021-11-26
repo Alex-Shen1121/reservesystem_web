@@ -6,26 +6,26 @@
     <div class="layuimini-main">
         <div>
             <div class="layui-btn-group">
-                <button class="layui-btn" id="btn-expand">å…¨éƒ¨å±•å¼€</button>
-                <button class="layui-btn layui-btn-normal" id="btn-fold">å…¨éƒ¨æŠ˜å </button>
+                <button class="layui-btn" id="btn-expand">È«²¿Õ¹¿ª</button>
+                <button class="layui-btn layui-btn-normal" id="btn-fold">È«²¿ÕÛµş</button>
             </div>
             <table id="munu-table" class="layui-table" lay-filter="munu-table"></table>
         </div>
     </div>
 </div>
-<!-- æ“ä½œåˆ— -->
+<!-- ²Ù×÷ÁĞ -->
 <script type="text/html" id="auth-state">
     {{# if(d.type=='0'){ }}
-       <a class="layui-btn layui-btn-blue layui-btn-xs" lay-event="add">æ·»åŠ </a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ä¿®æ”¹</a>
+       <a class="layui-btn layui-btn-blue layui-btn-xs" lay-event="add">Ìí¼Ó</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ĞŞ¸Ä</a>
 
     {{# }else if(d.type=='1'){ }}
-        <a class="layui-btn layui-btn-blue layui-btn-xs" lay-event="add">æ·»åŠ </a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ä¿®æ”¹</a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">åˆ é™¤</a>
+        <a class="layui-btn layui-btn-blue layui-btn-xs" lay-event="add">Ìí¼Ó</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ĞŞ¸Ä</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">É¾³ı</a>
     {{# }else{ }}
-        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ä¿®æ”¹</a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">åˆ é™¤</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">ĞŞ¸Ä</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">É¾³ı</a>
     {{# } }}
 
 </script>
@@ -37,12 +37,12 @@
         var axios = layui.axios;
         var miniPage = layui.miniPage;
         var form = layui.form;
-        //åŠ è½½æ¸²æŸ“é¡µé¢ treetable
+        //¼ÓÔØäÖÈ¾Ò³Ãæ treetable
         window.reload=function(){
             renderTable();
         }
 
-        // æ¸²æŸ“è¡¨æ ¼
+        // äÖÈ¾±í¸ñ
        var renderTable=function(){
            layer.load(2);
            treetable.render({
@@ -56,32 +56,32 @@
                treeDefaultClose:false,
                cols: [[
                    {type: 'numbers'},
-                   {field: 'name', width: 300, title: 'ç§‘å®¤åç§°'},
+                   {field: 'name', width: 300, title: '¿ÆÊÒÃû³Æ'},
 
                    {
                        field: 'type', width: 240, align: 'center', templet: function (d) {
                            if (d.type == 0) {
-                               return '<span class="layui-badge layui-bg-gray">åŒ»é™¢</span>';
+                               return '<span class="layui-badge layui-bg-gray">Ò½Ôº</span>';
                            }
                            if (d.type == 1) {
-                               return '<span class="layui-badge layui-bg-blue">ç§‘å®¤</span>';
+                               return '<span class="layui-badge layui-bg-blue">¿ÆÊÒ</span>';
                            } else {
-                               return '<span class="layui-badge-rim">éƒ¨é—¨</span>';
+                               return '<span class="layui-badge-rim">²¿ÃÅ</span>';
                            }
-                       }, title: 'ç±»å‹'
+                       }, title: 'ÀàĞÍ'
                    },
-                   {field: 'sort',width:100, title: 'æ’åº'},
+                   {field: 'sort',width:100, title: 'ÅÅĞò'},
                    {
                        field: 'status', width: 120, align: 'center', templet: function (d) {
                            if (d.status == 0) {
-                               return '<span class="layui-badge layui-bg-gray">ç¦ç”¨</span>';
+                               return '<span class="layui-badge layui-bg-gray">½ûÓÃ</span>';
                            }
                            if (d.status == 1) {
-                               return '<span class="layui-badge layui-bg-blue">æ­£å¸¸</span>';
+                               return '<span class="layui-badge layui-bg-blue">Õı³£</span>';
                            }
-                       }, title: 'çŠ¶æ€'
+                       }, title: '×´Ì¬'
                    },
-                   {templet: '#auth-state', width: 230, align: 'center', title: 'æ“ä½œ'}
+                   {templet: '#auth-state', width: 230, align: 'center', title: '²Ù×÷'}
                ]],
                done: function () {
                    layer.closeAll('loading');
@@ -89,7 +89,7 @@
            });
        }
 
-       //åˆæ¬¡åŠ è½½éœ€è¦è°ƒç”¨
+       //³õ´Î¼ÓÔØĞèÒªµ÷ÓÃ
         renderTable();
 
         $('#btn-expand').click(function () {
@@ -100,7 +100,7 @@
             treetable.foldAll('#munu-table');
         });
 
-        //æ•°æ®çš„æ¸²æŸ“
+        //Êı¾İµÄäÖÈ¾
         function setFormValues(data){
             debugger
             // if(data.status==1){
@@ -121,7 +121,7 @@
         }
 
 
-        //ç›‘å¬å·¥å…·æ¡
+        //¼àÌı¹¤¾ßÌõ
         table.on('tool(munu-table)', function (obj) {
             var data = obj.data;
             var layEvent = obj.event;
@@ -132,10 +132,10 @@
                     debugger
                     if(response.data.code==200){
                         layer.msg(response.data.msg);
-                        //é‡æ–°åŠ è½½è¡¨æ ¼
+                        //ÖØĞÂ¼ÓÔØ±í¸ñ
                         window.reload()
                     }
-                    //å…³é—­å¼¹å‡ºé¡µé¢
+                    //¹Ø±Õµ¯³öÒ³Ãæ
                     layer.close(parentIndex);
                 }).catch(err=> {
                         console.log(err);
@@ -144,12 +144,12 @@
                 return false;
 
             } else if (layEvent === 'edit') {
-                //ä¿®æ”¹åŠŸèƒ½
+                //ĞŞ¸Ä¹¦ÄÜ
                 var content = miniPage.getHrefContent('page/dept/update.html');
                 var openWH = miniPage.getOpenWidthHeight();
 
                 var index = layer.open({
-                    title: 'ä¿®æ”¹ç§‘å®¤',
+                    title: 'ĞŞ¸Ä¿ÆÊÒ',
                     type: 1,
                     shade: 0.2,
                     maxmin:true,
@@ -158,7 +158,7 @@
                     offset: [openWH[2] + 'px', openWH[3] + 'px'],
                     content: content,
                 });
-                //è°ƒç”¨æ¸²æŸ“æ•°æ®
+                //µ÷ÓÃäÖÈ¾Êı¾İ
                 setFormValues(data);
 
                 $(window).on("resize", function () {
@@ -170,7 +170,7 @@
                 var openWH = miniPage.getOpenWidthHeight();
 
                 var index = layer.open({
-                    title: 'æ·»åŠ ç§‘å®¤',
+                    title: 'Ìí¼Ó¿ÆÊÒ',
                     type: 1,
                     shade: 0.2,
                     maxmin:true,
@@ -179,7 +179,7 @@
                     offset: [openWH[2] + 'px', openWH[3] + 'px'],
                     content: content,
                 });
-                //è®¾ç½®éšè—å€¼ä¿¡æ¯
+                //ÉèÖÃÒş²ØÖµĞÅÏ¢
                 $("#type").val(data.type+1);
                 $("#parentId").val(data.id);
                 $(window).on("resize", function () {
