@@ -61,12 +61,12 @@
             cols: [[
                 {type: "checkbox", width: 50},
                 // {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'username', width: 80, title: '用户名'},
+                {field: 'username', width: 120, title: '用户名'},
                 {field: 'sex', width: 80, title: '性别'},
                 {field: 'jobTitle', width: 120, title: '职称'},
-                {templet:'<div>{{d.dept.name}}</div>',title: '科室', minWidth: 100},
-                {field: 'tel', width: 120, title: '电话'},
-                {field: 'email', width: 120, title: '邮箱'},
+                {templet:'<div>{{d.dept.name}}</div>',title: '科室', width: 180},
+                {field: 'tel', width: 180, title: '电话'},
+                {field: 'email', width: 200, title: '邮箱'},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
