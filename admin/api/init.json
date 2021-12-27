@@ -78,26 +78,6 @@
               "target": "_self"
             }
           ]
-        },
-        {
-          "title": "统计分析",
-          "href": "",
-          "icon": "fa fa-home",
-          "target": "_self",
-          "child": [
-            {
-              "title": "柱状图统计(按部分员工)",
-              "href": "page/tongji/index.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
-              "title": "玫瑰图统计(按部分员工)",
-              "href": "page/tongji/index2.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            }
-          ]
         }
       ]
     }
